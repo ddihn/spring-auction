@@ -1,0 +1,20 @@
+# Gradle Build output
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Application
+out/
+
+# Gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar
