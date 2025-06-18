@@ -1,18 +1,13 @@
+# src/main/resources/application.yml
 spring:
   application:
     name: spring-auction
+
   datasource:
     url: jdbc:mysql://localhost:3307/auctiondb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-  mybatis:
-    mapper-locations: classpath:mapper/**/*.xml
-    type-aliases-package: kopo.auction.domain
-    configuration:
-      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-      map-underscore-to-camel-case: true
 
   servlet:
     encoding:
@@ -23,6 +18,19 @@ spring:
   logging:
     level:
       root: DEBUG
+      # MyBatis 로딩 로그 확인 원하면 uncomment
+      # org.mybatis: DEBUG
 
   server:
     port: 8080
+
+# ─────────────────────────────────────────────────────────────────────────────
+
+# MyBatis 설정은 spring.* 아래가 아니라 별도의 mybatis 루트로 옮겨야 적용됩니다.
+mybatis:
+  # 반드시 이 키를 사용해야 XML 매퍼를 스캔합니다
+  mapper-locations: classpath:/mapper/**/*.xml
+  type-aliases-package: kopo.auction.domain
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

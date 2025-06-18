@@ -6,4 +6,8 @@
     <select id="findAll" resultType="kopo.auction.domain.User">
         SELECT * FROM users
     </select>
+
+    <select id="findUsernameById" parameterType="long" resultType="string">
+        SELECT username FROM users WHERE id = #{id}
+    </select>
 </mapper>

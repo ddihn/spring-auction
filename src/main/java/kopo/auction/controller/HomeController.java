@@ -4,6 +4,7 @@ import kopo.auction.domain.User;
 import kopo.auction.service.UserService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,5 +35,10 @@ public class HomeController {
     @GetMapping("/api/users")
     public List<User> listUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/username/{id}")
+    public String getUsername(@PathVariable Long id) {
+        return userService.getUsernameById(id);
     }
 }
