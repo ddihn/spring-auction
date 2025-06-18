@@ -17,4 +17,4 @@ Thumbs.db
 out/
 
 # Gradle wrapper
-!gradle/wrapper/gradle-wrapper.jarsrc/main/resources/application.yml
+!gradle/wrapper/gradle-wrapper.jar
