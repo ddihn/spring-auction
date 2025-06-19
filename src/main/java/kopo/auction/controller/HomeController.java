@@ -26,18 +26,18 @@ public class HomeController {
         return "OK";
     }
 
-    @GetMapping("/bcrypt")
+    @GetMapping("/test/bcrypt")
     public String encode(@RequestParam String pw) {
         return this.passwordEncoder.encode(pw);
     }
 
 
-    @GetMapping("/api/users")
+    @GetMapping("/test/api/users")
     public List<User> listUsers() {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/username/{id}")
+    @GetMapping("/test/username/{id}")
     public String getUsername(@PathVariable Long id) {
         return userService.getUsernameById(id);
     }

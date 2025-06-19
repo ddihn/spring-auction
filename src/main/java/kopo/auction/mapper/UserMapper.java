@@ -14,4 +14,9 @@ public interface UserMapper {
 
 //    @Select("SELECT username FROM users WHERE id = #{id}")
     String findUsernameById(@Param("id") Long id);
+
+    User findByUsername(@Param("username") String username);
+
+    void insert(User user);
+
 }
